@@ -26,16 +26,22 @@
 **[Как установить Vagrant на Debian 12](https://github.com/avlikh/Install_Vagrant_Debian12/blob/main/README.md)**   
 
 Развернем Vagrant-стенд:
-  - Создайте папку с проектом, (например: /opt/otus/ZFS):
+  - Создайте папку с проектом и зайдите в нее (например: /opt/otus/ZFS):
 ```
-mkdir -p /opt/otus/ZFS
+mkdir -p /opt/otus/ZFS ; cd /opt/otus/ZFS
 ```
-  - Создайте папку с проектом, (например: /opt/otus/ZFS):
+  - Клонируете проект с Github, набрав команду:
 ```
 apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_08.git;
 ```
-
-
+  - Запустите проект из папки, в которую склонировали проект (в нашем примере /opt/otus/ZFS):
+```
+vagrant up
+```
+  - Зайдите в виртуальную машину (box):
+```
+vagrant ssh
+```
 
 
 
