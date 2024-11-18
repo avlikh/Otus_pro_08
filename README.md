@@ -598,7 +598,7 @@ otus  checksum  sha256     local
 ---
 ### 4. Работа со снапшотами.
 
-Скопируем файл из удаленной директории:
+**Скопируем файл из удаленной директории:**
 ```
 wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
 ```
@@ -607,9 +607,48 @@ wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.
 <summary> результат выполнения команды: </summary>
 
 ```
-kkkk
+Resolving drive.usercontent.google.com (drive.usercontent.google.com)... 64.233.165.132, 2a00:1450:4010:c08::84
+Connecting to drive.usercontent.google.com (drive.usercontent.google.com)|64.233.165.132|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5432736 (5.2M) [application/octet-stream]
+Saving to: ‘otus_task2.file’
+
+100%[==================================================================================================================================================================================>] 5,432,736   5.00MB/s   in 1.0s
+
+2024-11-18 19:11:32 (5.00 MB/s) - ‘otus_task2.file’ saved [5432736/5432736]
+
+
+[1]+  Done                    wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI
 ```
 </details>
 
-восстановить файл локально. zfs receive;
-найти зашифрованное сообщение в файле secret_message.
+**Восстановим файл из снапшота:**
+```
+zfs receive otus/test@today < otus_task2.file
+```
+
+**Найдем файл с зашифрованным сообщением:**
+```
+find /otus/test -name "secret_message"
+```
+
+<details>
+<summary> результат выполнения команды: </summary>
+
+```
+/otus/test/task1/file_mess/secret_message
+```
+</details>
+
+**Посмотрим содержимое найденного файла:**
+```
+cat /otus/test/task1/file_mess/secret_message
+```
+
+<details>
+<summary> результат выполнения команды: </summary>
+
+```
+https://otus.ru/lessons/linux-hl/
+```
+</details>
