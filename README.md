@@ -1,7 +1,7 @@
 # OTUS PRO Homework 8 ZFS
 
 ## Домашняя работа 8: ZFS
----
+
 ### Домашнее задание:
    - Определить алгоритм с наилучшим сжатием:
      - Определить какие алгоритмы сжатия поддерживает zfs (gzip, zle, lzjb, lz4);
@@ -21,10 +21,19 @@
      - найти зашифрованное сообщение в файле secret_message.
 ---
 ### Выполнение задания:
+## 1. Подготовка рабочего места:
 Выполнение домашнего задания предполагает, что на комптютере установлен Vagrant+VirtualBox   
-**[Как установить Vagrant на Debian 12](https://github.com/avlikh/Install_Vagrant_Debian12/blob/main/README.md)**
+**[Как установить Vagrant на Debian 12](https://github.com/avlikh/Install_Vagrant_Debian12/blob/main/README.md)**   
 
-
+Развернем Vagrant-стенд:
+  - Создайте папку с проектом, (например: /opt/otus/ZFS):
+```
+mkdir -p /opt/otus/ZFS
+```
+  - Создайте папку с проектом, (например: /opt/otus/ZFS):
+```
+apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_09.git /ansible;
+```
 
 
 
