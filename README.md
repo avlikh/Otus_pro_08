@@ -32,7 +32,7 @@ mkdir -p /opt/otus/ZFS
 ```
   - Создайте папку с проектом, (например: /opt/otus/ZFS):
 ```
-apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_09.git /ansible;
+apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_08.git;
 ```
 
 
