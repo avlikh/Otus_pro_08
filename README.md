@@ -188,3 +188,60 @@ Saving to: ‘/otus4/pg2600.converter.log’
 ```
 </details>
 
+**Проверим, что файл был скачан во все пулы:**
+```
+ls -l /otus*
+```
+<details>
+<summary> результат выполнения команды: </summary>
+
+```
+/otus1:
+total 22090
+-rw-r--r--. 1 root root 41098441 Nov  2 07:57 pg2600.converter.log
+
+/otus2:
+total 18003
+-rw-r--r--. 1 root root 41098441 Nov  2 07:57 pg2600.converter.log
+
+/otus3:
+total 10964
+-rw-r--r--. 1 root root 41098441 Nov  2 07:57 pg2600.converter.log
+
+/otus4:
+total 40164
+-rw-r--r--. 1 root root 41098441 Nov  2 07:57 pg2600.converter.log
+```
+</details>
+
+Уже на этом этапе видно, что самый оптимальный метод сжатия у нас используется в пуле otus3.
+**Проверим, сколько места занимает один и тот же файл в разных пулах и проверим степень сжатия файлов:**
+```
+zfs list
+```
+<details>
+<summary> результат выполнения команды: </summary>
+
+```
+NAME    USED  AVAIL     REFER  MOUNTPOINT
+otus1  21.7M   330M     21.6M  /otus1
+otus2  17.7M   334M     17.6M  /otus2
+otus3  10.8M   341M     10.7M  /otus3
+otus4  39.3M   313M     39.2M  /otus4
+```
+</details>
+```
+zfs get all | grep compressratio | grep -v ref
+```
+<details>
+<summary> результат выполнения команды: </summary>
+
+```
+otus1  compressratio         1.82x                  -
+otus2  compressratio         2.23x                  -
+otus3  compressratio         3.66x                  -
+otus4  compressratio         1.00x                  -
+```
+</details>
+
+Таким образом, у нас получается, что алгоритм **gzip-9 самый эффективный** по сжатию.
