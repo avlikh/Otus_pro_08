@@ -598,7 +598,7 @@ otus  checksum  sha256     local
 ---
 ### 4. Работа со снапшотами.
 
-**Скопируем файл из удаленной директории:**
+**Скачаем файл с удаленного сервера:**
 ```
 wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
 ```
