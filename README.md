@@ -652,3 +652,5 @@ cat /otus/test/task1/file_mess/secret_message
 https://otus.ru/lessons/linux-hl/
 ```
 </details>
+
+Итак, зашифрованное сообщение в файле secret_message: **https://otus.ru/lessons/linux-hl/**
