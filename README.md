@@ -33,7 +33,7 @@ mkdir -p /opt/otus/ZFS ; cd /opt/otus/ZFS
 ```
   - Клонируете проект с Github, набрав команду:
 ```
-apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_08.git;
+apt update -y && apt install git -y ; git clone https://github.com/avlikh/Otus_pro_08.git .
 ```
   - Запустите проект из папки, в которую склонировали проект (в нашем примере /opt/otus/ZFS):
 ```
